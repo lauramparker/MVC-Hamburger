@@ -1,12 +1,9 @@
 // Import MySQL connection.
 var connection = require("../config/connection.js");
 
-// Helper function for SQL syntax.
-// Let's say we want to pass 3 values into the mySQL query.
-// In order to write the query, we need 3 question marks.
-// The above helper function loops through and creates an array of question marks - ["?", "?", "?"] - and turns it into a string.
-// ["?", "?", "?"].toString() => "?,?,?";
-function printQuestionMarks(num) {
+// Helper function for SQL syntax. 
+//Tells us how many question marks we need in our query
+function printQuestionMarks(num) {  
   var arr = [];
 
   for (var i = 0; i < num; i++) {
@@ -16,22 +13,22 @@ function printQuestionMarks(num) {
   return arr.toString();
 }
 
+
 // Helper function to convert object key/value pairs to SQL syntax
-function objToSql(ob) {
+function objToSql(ob) { 
   var arr = [];
 
-  // loop through the keys and push the key/value as a string int arr
-  for (var key in ob) {
+  // loops through the object keys and push the key/value as a string int arr
+  for (var key in ob) { 
     var value = ob[key];
-    // check to skip hidden properties
+    // check to skip the prototype properties
     if (Object.hasOwnProperty.call(ob, key)) {
-      // if string with spaces, add quotations (Lana Del Grey => 'Lana Del Grey')
+      // if string with spaces, add quotations
       if (typeof value === "string" && value.indexOf(" ") >= 0) {
         value = "'" + value + "'";
       }
-      // e.g. {name: 'Lana Del Grey'} => ["name='Lana Del Grey'"]
-      // e.g. {sleepy: true} => ["sleepy=true"]
-      arr.push(key + "=" + value);
+      // adds the = to key=value 
+      arr.push(key + "=" + value);  // !! push the key and value into the array
     }
   }
 
@@ -51,14 +48,13 @@ var orm = {
     });
   },
   create: function(table, cols, vals, cb) {
-    var queryString = "INSERT INTO " + table;
+    var queryString = "INSERT INTO " + table;  //this does the SQL query
 
     queryString += " (";
-    queryString += cols.toString();
+    queryString += cols.toString(); //when we call toString on an array, we get a comma-separated list of items
     queryString += ") ";
     queryString += "VALUES (";
     queryString += printQuestionMarks(vals.length);
-    queryString += ") ";
 
     console.log(queryString);
 
@@ -75,7 +71,7 @@ var orm = {
     var queryString = "UPDATE " + table;
 
     queryString += " SET ";
-    queryString += objToSql(objColVals);
+    queryString += objToSql(objColVals); //!! the objColVals turns this into name=whopper,devour=true for our query
     queryString += " WHERE ";
     queryString += condition;
 
@@ -90,5 +86,5 @@ var orm = {
   }
 };
 
-// Export the orm object for the model (cat.js).
+// Export the orm object for the model (burger.js).
 module.exports = orm;
