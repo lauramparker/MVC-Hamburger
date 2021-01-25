@@ -1,32 +1,49 @@
 <h1>Eat-Da-Burger!</h1> 
 
-<ol>
-   {{#each burgers}}
-  	<li>
-  	   <p>ID: {{this.id}}</p>
-       <p>Name: {{this.burger}}</p>
-  	</li>
-  {{/each}}
+
+<div id = "container-burger" class="all-burgers col-9 mx-auto">
 
 
-  {{!-- NEED T WO LISTS 
-  <ul>
-  {{#each cats}}
-    {{#if sleepy}}
-      {{> cats/cat-block sleep=false}}
-    {{/if}}
-  {{/each}}
-</ul> --}}
+<div id = "not-yet-devoured">
+    <h3>Not Yet Devoured!</h3> 
+    <ul>
+    {{#each burgers}}
+      {{#unless devour}}
+        {{> change-condition devour=false}}
+        <li>
+        <p>ID: {{this.id}}  Name: {{this.name}}</p>
+        <button class="change-status">Devour It!</button>
+        </li>
+      {{/unless}}
+    {{/each}}
+    </ul>
+</div>
 
-</ol>
 
-<h2>Add a Burger</h2>
-<form class="create-form">
+<div id = "devoured-it"></div>
+    <h3>Devoured It!</h3>
+    <ul> 
+    {{#each burgers}}
+        {{#if devour}}
+        {{> change-condition devour=true}}
+        {{/if}}
+    {{/each}}
+    </ul>
+</div>
 
-  <div class="form-group">
-    <label for="hambrg">Burger Name:</label>
-    <input type="text" name="name">
-  </div>
 
-  <button type="submit">Add Burger</button>
-</form>
+<div id = "add-a-burger">
+    <h3>Add a Burger</h3>
+    <form class="createNEW-form">
+
+    <div class="form-group">
+        <label for="hambrg">Burger Name:</label>
+        <input type="text" name="name">
+    </div>
+
+    <button type="submit">Add Burger</button>
+    </form>
+</div>
+
+
+</div>
