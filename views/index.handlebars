@@ -1,12 +1,22 @@
-<h1>Eat-Da-Burger!</h1>
+<h1>Eat-Da-Burger!</h1> 
 
 <ol>
    {{#each burgers}}
   	<li>
   	   <p>ID: {{this.id}}</p>
-       <p>Wish: {{this.burger}}</p>
+       <p>Name: {{this.burger}}</p>
   	</li>
   {{/each}}
+
+
+  {{!-- NEED T WO LISTS 
+  <ul>
+  {{#each cats}}
+    {{#if sleepy}}
+      {{> cats/cat-block sleep=false}}
+    {{/if}}
+  {{/each}}
+</ul> --}}
 
 </ol>
 
@@ -14,7 +24,7 @@
 <form class="create-form">
 
   <div class="form-group">
-    <label for="burger">Burger Name:</label>
+    <label for="hambrg">Burger Name:</label>
     <input type="text" name="name">
   </div>
 
