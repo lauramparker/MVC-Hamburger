@@ -6,12 +6,12 @@
 $(function() { 
     $(".change-status").on("click", function(event) {
       var id = $(this).data("id");
-      var name = $(this).data("burger_name");
+      var burger_name = $(this).data("burger_name");
       var newDevour = $(this).data("newdevour");
   
       var devourBurger = {
-     //   id: id,
-     //   burger_name: burger_name,
+        id: id,
+        burger_name: burger_name,
         devoured: newDevour
       };
   
