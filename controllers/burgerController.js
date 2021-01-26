@@ -34,7 +34,9 @@ router.post("/api/burgers", function(req, res) {
 // UPDATES a burger once it's been devoured, changes 'devour' === true
 router.put("/api/burgers/:id", function(req, res) {
   
-  var condition = "id = " + req.query.id;
+  var condition = "id = " + req.params.id;
+
+  console.log(condition);
 
   burger.update(
     {devoured: true},  //this.devour instead of req.body.devour?
