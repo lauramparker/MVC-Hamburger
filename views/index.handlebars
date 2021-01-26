@@ -1,60 +1,72 @@
-<div id = "container-burger" class="all-burgers col-9 mx-auto">
-
-<h1 class="text-center">Eat-Da-Burger!</h1>
-
-<div = "row">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR52lj8aeecx1Z1tJ5bmNhE-sCp_cWjwcUZAQ&usqp=CAU" alt="hand drawn graphic of hamburger">
-</div>
+<div class = "container" id = "container-burger" class="all-burgers">
 
 
-<div = "row">
-    <div="col">
-        <div id = "not-yet-devoured">
-            <h3>Not Yet Devoured!</h3> 
+  <div class = "row">
+    <div class = "col">
+        <h1 class="text-center">Eat-Da-Burger!</h1>
+        <img class="center-block" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR52lj8aeecx1Z1tJ5bmNhE-sCp_cWjwcUZAQ&usqp=CAU" alt="hand drawn graphic of hamburger">
+    </div>
+  </div>
+
+
+  <div class = "row-sm-12">
+    <div class="col-sm-6" id = "not-yet-devoured">
+      
+            <h3>Not Yet Devoured:</h3> 
+        <div class ="row">
+        <div class="col">
             <ul>
             {{#each burgers}}
             {{#unless devoured}}
-            {{!-- {{> change-condition devour=false}} --}}
+            {{!-- {{> change-condition devour=false}} link to partial, not in use--}}
                 <li>
-                <p>{{this.id}}    {{this.burger_name}}</p>
-                <button class="change-status" data-id="{{this.id}}" data-burger_name="{{this.burger_name}}" data-newdevour="{{this.devoured}}">Devour It!</button>
+                <p>#{{this.id}}    {{this.burger_name}}</p>
+                <button type="button" class="btn btn-info btn-sm" class="change-status"  data-id="{{this.id}}" data-burger_name="{{this.burger_name}}" data-newdevour="{{this.devoured}}">Devour It!</button>
                 </li>
             {{/unless}}
             {{/each}}
             </ul>
         </div>
-    </div>
-
-    <div="col">
-        <div id = "devoured-it"></div>
-            <h3>Devoured It!</h3>
-            <ul> 
-            {{#each burgers}}
-                {{#if devoured}}
-                {{!-- {{> change-condition devour=true}} --}}
-                <li>
-                <p>{{this.id}}    {{this.burger_name}}</p>
-                </li>
-                {{/if}}
-            {{/each}}
-            </ul>
         </div>
-    </div>
-</div>
-
-
-<div id = "add-a-burger">
-    <h3>Add a Burger</h3>
-    <form class="createNEW-form">
-
-    <div class="form-group">
-        <label for="hambrg">Burger Name:</label>
-        <input type="text" id="hambrg" burger_name="burger_name">
+ 
     </div>
 
-    <button type="submit">Add Burger</button>
-    </form>
-</div>
+            <div class="col-sm-6" id = "devoured-it">
+            
+                    <h3>Devoured It:</h3>
+                <div class ="row">
+                <div class="col">
+                    <ul> 
+                    {{#each burgers}}
+                        {{#if devoured}}
+                        {{!-- {{> change-condition devour=true}} link to partial, not in use--}}
+                        <li>
+                        <p>#{{this.id}}    {{this.burger_name}}</p>
+                        </li>
+                        {{/if}}
+                    {{/each}}
+                    </ul>
+                </div>
+                </div>
+            </div>
+    
+  </div>
 
+
+ <div class = "row-sm-12">
+    <div class = "col-sm-6" id = "add-a-burger">
+            <form class="createNEW-form">
+            <h3>Add a Burger:</h3>
+
+            <div class="form-group">
+                <label for="hambrg">Burger Name:</label>
+                <input type="text" id="hambrg" burger_name="burger_name">
+            </div>
+
+            <button type="submit" class="btn btn-info btn-sm">Add Burger</button>
+            </form>
+
+    </div>
+ </div>
 
 </div>
