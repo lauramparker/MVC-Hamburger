@@ -5,25 +5,30 @@
 //change-status is contained in partial
 $(function() { 
     $(".change-status").on("click", function(event) {
+
+      event.preventDefault();
+
       var id = $(this).data("id");
       var burger_name = $(this).data("burger_name");
-      var newDevour = $(this).data("newdevour");
+      var newDevour = true; //$(this).data("newdevour");
   
       var devourBurger = {
         id: id,
         burger_name: burger_name,
         devoured: newDevour
       };
+      console.log(devourBurger);
+
   
       // Send the PUT request to update the devoured state.
       $.ajax("/api/burgers/" + id, {
         type: "PUT",
         data: devourBurger
       }).then(
-        function() {
-          console.log("yummy!")
+        function() {  
+        console.log("yummy!" + id);
           // Reload the page to get the updated list
-          location.reload();
+        location.reload();
         });
     });
 

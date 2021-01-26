@@ -1,8 +1,8 @@
 <div id = "container-burger" class="all-burgers col-9 mx-auto">
 
-<h1 class="text-align-center">Eat-Da-Burger!</h1>
+<h1 class="text-center">Eat-Da-Burger!</h1>
 
-<img src="/images/hamburger-hand-drawn-in-one-line-on-a-white-background-vector.jpg"
+<img src="/images/hamburger-hand-drawn-in-one-line-on-a-white-background-vector.jpg" alt="hand drawn graphic of hamburger">
 
 
 
@@ -15,7 +15,7 @@
        {{!-- {{> change-condition devour=false}} --}}
         <li>
         <p>{{this.id}}    {{this.burger_name}}</p>
-        <button class="change-status">Devour It!</button>
+        <button class="change-status" data-id="{{this.id}}" data-burger_name="{{this.burger_name}}" data-newdevour="{{this.devoured}}">Devour It!</button>
         </li>
       {{/unless}}
     {{/each}}
