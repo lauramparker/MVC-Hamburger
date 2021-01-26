@@ -6,13 +6,13 @@
 $(function() { 
     $(".change-status").on("click", function(event) {
       var id = $(this).data("id");
-      var name = $(this).data("name");
+      var name = $(this).data("burger_name");
       var newDevour = $(this).data("newdevour");
   
       var devourBurger = {
      //   id: id,
-     //   name: name,
-        devour: newDevour
+     //   burger_name: burger_name,
+        devoured: newDevour
       };
   
       // Send the PUT request to update the devoured state.
@@ -34,8 +34,8 @@ $(function() {
     event.preventDefault();
   
       var newBurger = {
-        name: $("#hambrg").val().trim(),
-        devour: false
+        burger_name: $("#hambrg").val().trim(),
+        devoured: false
       };
   
       // Send the POST request.

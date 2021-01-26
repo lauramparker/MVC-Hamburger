@@ -1,9 +1,18 @@
-<li>
+{{!-- <li>
 	{{name}}
 
 	<button class="change-status" data-id="{{id}}" data-name="{{name}}" data-devour="{{devour}}">
 	
 	{{#if condition}} {{trueValue}} {{else}} {{falseValue}} {{/if}}
 	
+	</button>
+</li> --}}
+
+
+<li>
+	{{burger_name}}
+
+	<button class="change-status" data-id="{{id}}" data-newdevour="{{devour}}">
+		{{#if devour}}Yummy!{{/if}}
 	</button>
 </li>

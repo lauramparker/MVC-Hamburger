@@ -8,10 +8,10 @@
     <h3>Not Yet Devoured!</h3> 
     <ul>
     {{#each burgers}}
-      {{#unless devour}}
-        {{!-- {{> change-condition devour=false}} --}}
+      {{#unless devoured}}
+       {{!-- {{> change-condition devour=false}} --}}
         <li>
-        <p>{{this.id}}    Name: {{this.name}}</p>
+        <p>{{this.id}}    {{this.burger_name}}</p>
         <button class="change-status">Devour It!</button>
         </li>
       {{/unless}}
@@ -24,10 +24,10 @@
     <h3>Devoured It!</h3>
     <ul> 
     {{#each burgers}}
-        {{#if devour}}
+        {{#if devoured}}
         {{!-- {{> change-condition devour=true}} --}}
         <li>
-        <p>{{this.id}}    Name: {{this.name}}</p>
+        <p>{{this.id}}    {{this.burger_name}}</p>
         </li>
         {{/if}}
     {{/each}}
@@ -41,7 +41,7 @@
 
     <div class="form-group">
         <label for="hambrg">Burger Name:</label>
-        <input type="text" id="hambrg" name="name">
+        <input type="text" id="hambrg" burger_name="burger_name">
     </div>
 
     <button type="submit">Add Burger</button>
