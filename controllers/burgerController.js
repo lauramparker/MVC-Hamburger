@@ -23,7 +23,7 @@ router.get("/", function(req, res) {
 // ADDS a new burger to the list, default to 'devour' === false
 
 router.post("/api/burgers", function(req, res) {
-    burger.create(["name", "devour"], [req.body.name, false], function(result) {
+    burger.create(["name"], [req.body.name], function(result) {
       // Send back the ID of the new burger
       res.json({ id: result.insertId });
     });
@@ -31,23 +31,23 @@ router.post("/api/burgers", function(req, res) {
 
 
 
-// // UPDATES a burger once it's been devoured, changes 'devour' === true
-// router.put("/api/burgers/:id", function(req, res) {
-//   var condition = "id = " + req.params.id;
+// UPDATES a burger once it's been devoured, changes 'devour' === true
+router.put("/api/burgers/:id", function(req, res) {
+  var condition = "id = " + req.params.id;
 
-//   burger.update(
-//     {devour: req.body.devour},
-//     condition,
-//     function(result) {
-//       if (result.changedRows === 0) {
-//         // If no rows were changed, then the ID must not exist, so 404
-//         return res.status(404).end();
-//       }
-//       res.status(200).end();
+  burger.update(
+    {devour: true},  //this.devour instead of req.body.devour?
+    condition,
+    function(result) {
+      if (result.changedRows === 0) {
+        // If no rows were changed, then the ID must not exist, so 404
+        return res.status(404).end();
+      }
+      res.status(200).end();
 
-//     }
-//   );
-// });
+    }
+  );
+});
 
 // Export routes for server.js to use.
 module.exports = router;

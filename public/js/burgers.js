@@ -10,8 +10,8 @@ $(function() {
       var newDevour = $(this).data("newdevour");
   
       var devourBurger = {
-      //  id: id,
-      //  name: name,
+     //   id: id,
+     //   name: name,
         devour: newDevour
       };
   

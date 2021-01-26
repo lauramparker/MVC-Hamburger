@@ -55,6 +55,7 @@ var orm = {
     queryString += ") ";
     queryString += "VALUES (";
     queryString += printQuestionMarks(vals.length);
+    queryString += ") ";
 
     console.log(queryString);
 
@@ -66,6 +67,7 @@ var orm = {
       cb(result);
     });
   },
+  
   // An example of objColVals would be {name: panther, sleepy: true}
   update: function(table, objColVals, condition, cb) {
     var queryString = "UPDATE " + table;
