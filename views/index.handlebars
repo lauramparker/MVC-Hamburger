@@ -2,39 +2,44 @@
 
 <h1 class="text-center">Eat-Da-Burger!</h1>
 
-<img src="/images/hamburger-hand-drawn-in-one-line-on-a-white-background-vector.jpg" alt="hand drawn graphic of hamburger">
-
-
-
-
-<div id = "not-yet-devoured">
-    <h3>Not Yet Devoured!</h3> 
-    <ul>
-    {{#each burgers}}
-      {{#unless devoured}}
-       {{!-- {{> change-condition devour=false}} --}}
-        <li>
-        <p>{{this.id}}    {{this.burger_name}}</p>
-        <button class="change-status" data-id="{{this.id}}" data-burger_name="{{this.burger_name}}" data-newdevour="{{this.devoured}}">Devour It!</button>
-        </li>
-      {{/unless}}
-    {{/each}}
-    </ul>
+<div = "row">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR52lj8aeecx1Z1tJ5bmNhE-sCp_cWjwcUZAQ&usqp=CAU" alt="hand drawn graphic of hamburger">
 </div>
 
 
-<div id = "devoured-it"></div>
-    <h3>Devoured It!</h3>
-    <ul> 
-    {{#each burgers}}
-        {{#if devoured}}
-        {{!-- {{> change-condition devour=true}} --}}
-        <li>
-        <p>{{this.id}}    {{this.burger_name}}</p>
-        </li>
-        {{/if}}
-    {{/each}}
-    </ul>
+<div = "row">
+    <div="col">
+        <div id = "not-yet-devoured">
+            <h3>Not Yet Devoured!</h3> 
+            <ul>
+            {{#each burgers}}
+            {{#unless devoured}}
+            {{!-- {{> change-condition devour=false}} --}}
+                <li>
+                <p>{{this.id}}    {{this.burger_name}}</p>
+                <button class="change-status" data-id="{{this.id}}" data-burger_name="{{this.burger_name}}" data-newdevour="{{this.devoured}}">Devour It!</button>
+                </li>
+            {{/unless}}
+            {{/each}}
+            </ul>
+        </div>
+    </div>
+
+    <div="col">
+        <div id = "devoured-it"></div>
+            <h3>Devoured It!</h3>
+            <ul> 
+            {{#each burgers}}
+                {{#if devoured}}
+                {{!-- {{> change-condition devour=true}} --}}
+                <li>
+                <p>{{this.id}}    {{this.burger_name}}</p>
+                </li>
+                {{/if}}
+            {{/each}}
+            </ul>
+        </div>
+    </div>
 </div>
 
 

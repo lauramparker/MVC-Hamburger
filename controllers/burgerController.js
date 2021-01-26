@@ -39,7 +39,7 @@ router.put("/api/burgers/:id", function(req, res) {
   console.log(condition);
 
   burger.update(
-    {devoured: true},  //this.devour instead of req.body.devour?
+    {devoured: true},  //should be devoured: req.body.devour
     condition,
     function(result) {
       if (result.changedRows === 0) {
