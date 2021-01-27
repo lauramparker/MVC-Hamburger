@@ -30,7 +30,7 @@
     npm install express-handlebars
     
     After cloning the repo, navigate to the path containing the server.js file and, from the command line, enter node server.js. Then, open your browser and type the local PORT, ie:  http://localhost:3000/
-
+    
     Alternatively, access this application on heroku where it is deployed:  
     https://vast-peak-78616.herokuapp.com/
     
@@ -39,7 +39,7 @@
 
 
 <h3>Usage:</h3>
-    Use this project as an example of a command line application using node.js and mysql
+    Use this project as an example of an MVC application using MySQL, Node.js/express, and handlebars templates
 
 <h3>Credits:</h3> Laura Parker @lauramparker (author)
 
