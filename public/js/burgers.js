@@ -1,12 +1,8 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
 
-
 //function to move a burger to devoured 
-//change-status is contained in partial
 $(function() { 
     $(".change-status").on("click", function(event) {
-
-      event.preventDefault();
 
       var id = $(this).data("id");
       var burger_name = $(this).data("burger_name");
