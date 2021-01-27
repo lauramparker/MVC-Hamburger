@@ -9,15 +9,15 @@
 
 <h3>Overview Snapshots of User Interface:</h3> 
 <p>
-    <img src="/createREADME (6).png" width="350" height="350" />
+    <img src="images/createREADME (6).png" width="350" height="350" />
 </p>
 
 <p>
-    <img src="/createREADME (7).png" width="350" height="350" />
+    <img src="images/createREADME (7).png" width="350" height="350" />
 </p>
 
 <p>
-    <img src="/createREADME (8).png" width="350" height="350" />
+    <img src="images/createREADME (8).png" width="350" height="350" />
 </p>
 
 
