@@ -17,6 +17,10 @@ p {
     font-size: 24px
 }
 
+button {
+  color: blue
+}
+
 
 li {
     padding: 5px;
@@ -26,8 +30,6 @@ li {
   .label {
     font-size: 16px
   }
-
-
 
 
 #container-burger {
