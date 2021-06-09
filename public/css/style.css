@@ -1,26 +1,30 @@
 body {
     font-family: 'Rancho', serif;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR52lj8aeecx1Z1tJ5bmNhE-sCp_cWjwcUZAQ&usqp=CAU"); 
+    background-repeat: repeat;
+    background-position-x: center;
   }
 
 
 h3 {
     font-weight: bold;
-    font-size: 36px
+    font-size: 36px;
+    text-align: center;
 }
 
 h1 {
     font-weight: bold;
-    font-size: 72px
+    font-size: 72px;
+    color: #94ca5b;
 }
 
 p {
-    font-size: 24px
+    font-size: 24px;
 }
 
-button {
-  color: blue
+ul {
+  list-style-type: none;
 }
-
 
 li {
     padding: 5px;
@@ -31,15 +35,27 @@ li {
     font-size: 16px
   }
 
+button {
+  background-color: #94ca5b;
+}
+
 
 #container-burger {
-    background: #68d388
+    background:white;
+    border-radius: 2%;
+    border-color: #f56b61;
+    border-style: double;
+    border-width: 10px;
 }
   
 form {
     padding: 5px;
     margin: 5px;
-    background: #ffaaab
+    background:white;
+    border-radius: 2%;
+    border-color: #f56b61;
+    border-style:solid;
+    border-width: 2px;
   }
   
   .form-group {
