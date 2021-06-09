@@ -1,5 +1,4 @@
 //Dependencies
-var compression = require('compression');
 var express = require("express");
 
 var router = express.Router();
@@ -51,6 +50,14 @@ router.put("/api/burgers/:id", function(req, res) {
 
     }
   );
+});
+
+//delete burger based on id
+router.delete("/api/burgers/:id", function(req, res) {
+  burger.delete(["burger_name"], [req.body.burger_name], function(result) {
+    // Send back the ID of the new burger
+    res.json({ result });
+  });
 });
 
 // Export routes for server.js to use.
