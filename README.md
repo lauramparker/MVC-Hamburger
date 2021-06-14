@@ -10,7 +10,7 @@
 
 ## Technologies Used
 - [Express](https://expressjs.com/)
-- [Node]((https://nodejs.org/en/download/)
+- [Node](https://nodejs.org/en/download/)
 - [MySQL](https://www.mysql.com/)
 - [Handlebars](https://handlebarsjs.com)
 
