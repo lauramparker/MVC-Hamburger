@@ -6,7 +6,7 @@
 
 ##Demo
 
-![hamburger demo](https://github.com/lauramparker/MVC-Hamburger/blob/main/public/MVC%Hamburger.gif)
+![hamburger demo](https://github.com/lauramparker/MVC-Hamburger/blob/main/images/MVC%Hamburgers.gif)
 
 ## Technologies Used
 - [Express](https://expressjs.com/)
