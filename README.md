@@ -2,7 +2,7 @@
  _An Express / MySQL / Handlebars Application_
 
 
->   This project delivers an application called "eat-da-burger" that logs a list of user-entered hamburger's.  The intent of the application is to have a little fun creating a list of hamburgers and then logging which hamburgers have been eaten (indicated by the user selecting the "Devour It!" button).  When a burger is added to the list, it appears on the left side list of burgers "Not Yet Devoured"; and, when the "Devour It" button is clicked, the named burger moves to the "Devoured It" list on the right-side. The application contains a schema for burgers to be added and then devoured (changing the burger's devoured status upon user action). It also leverages node.js/express to create the backend routes and link the backend and frontend; and, uses handlebars to create the view templates.  The application is deployed on heroku here:  https://vast-peak-78616.herokuapp.com/
+>   MVC-Hamburger is a Node CRUD application with a SQL database and Handlebars template engine. This application was my first example of standard model-view-control architecture. It allows a user to create and track a list of favorite burgers.  When a burger is added to the list, it appears on the left side list of burgers "Not Yet Devoured"; and, when the "Devour It" button is clicked, the named burger moves to the "Devoured It" list on the right-side. The application contains a schema for burgers to be added and then devoured (changing the burger's devoured status upon user action). It also leverages node.js/express to create the backend routes and link the backend and frontend; and, uses handlebars to create the view templates.  The application is deployed on heroku here:  https://vast-peak-78616.herokuapp.com/
 
 ## Demo
 
